@@ -1,2 +1,3 @@
-# SQL
-SQL Portfolio
+# Alex Sanchez's SQL PORTFOLIO
+
+## Welcome to my SQL Portfolio! This code repository contains examples of SQL I've written. Feel free to take a look and reach out if you have any questions: alexsanchez242180@gmail.com
