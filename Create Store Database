@@ -1,0 +1,13 @@
+--Create your own store 
+CREATE TABLE SportingGoodsStore(id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, color TEXT);
+
+INSERT INTO SportingGoodsStore VALUES (1, 'SoccerBall', 5, 30, 'blue');
+INSERT INTO SportingGoodsStore VALUES (2, 'Cleats', 5, 200, 'orange');
+INSERT INTO SportingGoodsStore VALUES (3, 'Socks', 5, 10, 'black');
+
+--Display items by price.
+SELECT * FROM SportingGoodsStore
+ORDER BY price desc;
+
+--Show one statisitc about item
+SELECT color FROM SportingGoodsStore;
