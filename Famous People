@@ -1,0 +1,28 @@
+--Create a minimum of 2 tables, one of the tables contains a column that relates to the primary key of another table.
+
+
+CREATE TABLE footballers (id INTEGER PRIMARY KEY, name TEXT, conference TEXT, birthplace TEXT, birthplace_id INTEGER);
+
+INSERT INTO footballers (name, conference, birthplace, birthplace_id) VALUES ("Raul Ruidiaz", "Western", "Peru", 1);
+INSERT INTO footballers (name, conference, birthplace, birthplace_id) VALUES ("Joe Scally", "Western", "New York", 2);
+INSERT INTO footballers (name, conference, birthplace, birthplace_id) VALUES ("Tayvon Gray", "Eastern", "New York", 2);
+INSERT INTO footballers (name, conference, birthplace, birthplace_id) VALUES ("Jordan Morris", "Western", "Washington", 3);
+
+CREATE TABLE artists (id INTEGER PRIMARY KEY, name TEXT, genre TEXT, birthplace TEXT, birthplace_id INTEGER);
+INSERT INTO artists (name, genre, birthplace, birthplace_id) VALUES ("Nas", "Rap", "New York", 2);
+INSERT INTO artists (name, genre, birthplace, birthplace_id) VALUES ("Tupac", "Rap", "New York", 2);
+INSERT INTO artists (name, genre, birthplace, birthplace_id) VALUES ("Katy Perry", "Pop", "California", 4);
+INSERT INTO artists (name, genre, birthplace, birthplace_id) VALUES ("Cher", "Pop", "California", 4);
+
+CREATE TABLE actors (id INTEGER PRIMARY KEY, name TEXT, age INTEGER, birthplace TEXT, birthplace_id INTEGER);
+INSERT INTO actors (name, age, birthplace, birthplace_id) VALUES ("Salma Hayek", 56, "Mexico", 5);
+INSERT INTO actors (name, age, birthplace, birthplace_id) VALUES ("Adam Sandler", 56, "New York", 2);
+INSERT INTO actors (name, age, birthplace, birthplace_id) VALUES ("Christian Bale", 49, "United Kingdom", 6);
+INSERT INTO actors (name, age, birthplace, birthplace_id) VALUES ("Eugenio Derbez", 61, "Mexico", 5);
+
+SELECT f.name, f.birthplace_id, f.birthplace, a.name, ac.name
+FROM footballers f
+JOIN artists a
+ON f.birthplace_id = a.birthplace_id
+JOIN actors ac
+ON ac.birthplace_id = a.birthplace_id;
